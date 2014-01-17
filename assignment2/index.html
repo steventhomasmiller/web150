@@ -1,4 +1,64 @@
-web150
-======
+<!doctype html>
+<html>
+	<head>
+		<title>A (Very Short) Tale of Macabre</title>
+		<meta charset="utf8">
+	</head>
+<body>
 
-Winter Web 150 Repository
+<script>
+//confirm true or false
+var ceilingString = confirm("You wake up in a dark, damp cell. You don't know how you got there, but you're there, nonetheless. A string is hanging from the ceiling. Pull it? (Yes or No)");
+if (ceilingString)
+{
+	//console.log("My word.");
+	
+	var goldCoins = prompt("Upon pulling the string, you are met by a cavalcade of magical gold coins, falling from a box in the ceiling. They shine like a long-forgotten light. You would like to keep them for once you escape, but you are also very hungry, and maybe one of them is chocolate underneath. Keep or eat?");
+	goldCoins = goldCoins.toLowerCase();
+	if (goldCoins == "eat")
+	{
+		console.log("Oh dear. It looks like this particular piece wasn't edible. Sadly, you took a pretty forceful bite, so I'm afraid this is THE END for you.");
+	}
+	
+	else if (goldCoins == "keep")
+	{
+		var keepCoins = prompt("Upon closer inspection, it looks like the coins are real gold, and a very dazzling real gold at that. How many do you keep?");
+		if (keepCoins < 1)
+		{
+			console.log("Your unselfishness once again comes to the rescue. You spend less time absorbed by your greed and more time focused on your resourcefulness. This leads to your escape. THE END.");
+		}
+		else if (keepCoins > 1)
+		{
+			console.log("It only takes one coin to become entranced by its beauty. The gold hypnotizes you, and you focus on nothing else but the gold. You lose all motivation to leave; you only care about your precious gold. This bestows you with an unnaturally long life -- 600 years to be exact. You're never found, but even if you were, no one you know is alive. THE END.");
+		}
+		else 
+		{
+			console.log("That's not a proper answer to the question.");
+		}
+	}
+	else 
+	{
+		console.log("Umm, that's not an option.");
+	}
+}
+
+else
+{
+	console.log("OK, fine.");
+	var mirror = confirm("You walk to a nearby mirror. It's dirty, so you can't see your reflection. Do you clean it? (Yes or no)");
+	if (mirror)
+	{
+		console.log("Whoops. Now you've done it. The mirror (apparently on unstable ground) falls on top of you and crushes you. I guess you cared more about your appearance than survival. THE END.");
+	}
+	else
+	{
+		console.log("You look fine, I'm sure.");
+		console.log("Your lack of vanity eventually leads to your safety. Well-done, humble-minded servant.");
+		console.log("THE END.");
+	}
+}
+
+</script>
+
+</body>
+</html>
