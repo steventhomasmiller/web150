@@ -1,4 +1,62 @@
-web150
-======
+<!doctype html>
+<html>
+        <head>
+                <title>War Games</title>
+                <meta charset="utf8">
+        </head>
+<body>
 
-Winter Web 150 Repository
+<h1>War and Such</h1>
+
+<script src="http://thomaswilburn.net/sccc/data/expenditures.js"/></script>
+
+<script>
+/* What's the country with the highest expenditures?
+What's the country with the lowest?
+What is the average military expenditure rate? */
+//create two variables
+//store objects
+
+//all should be undefined at first
+
+var highest = {amount : 0};
+for (var i = 0; i < expenditures.length; i++)
+{
+	var rich = expenditures[i];
+	//console.log(rich.country + ": " + rich.amount);
+	if (rich.amount > highest.amount)
+	{
+		highest = rich;
+	}
+	
+}
+
+/* var lowest = {amount : 0};
+for (var i= 0; i < expenditures.length; i++)
+{
+	var poor = expenditures[i];
+	if (poor.amount < lowest.amount)
+	{
+		poor = lowest;
+	}
+} 
+not sure about this
+*/
+
+var sum = 0;
+for (var i = 0; i < expenditures.length; i++)
+{
+	//total = parseFloat(total + expenditures[i].amount); 
+	sum += parseInt(expenditures[i].amount);
+}
+
+var average = sum/expenditures.length; //not sure about these calculations
+
+console.log("Highest expenditure: " + highest.country, highest.amount);
+// console.log("Lowest expenditure: " + lowest.country, lowest.amount);
+console.log("Average expenditure: " + average); 
+
+
+</script>
+</body>
+</html>
