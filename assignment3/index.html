@@ -8,6 +8,8 @@
 
 <h1>War and Such</h1>
 
+//Shoot, I really wished this worked <iframe width="420" height="315" src="//www.youtube.com/embed/H-kA3UtBj4M" frameborder="0" allowfullscreen></iframe>
+
 <script src="http://thomaswilburn.net/sccc/data/expenditures.js"/></script>
 
 <script>
@@ -31,17 +33,16 @@ for (var i = 0; i < expenditures.length; i++)
 	
 }
 
-/* var lowest = {amount : 0};
+var lowest = {amount : 100 }; //percentage
 for (var i= 0; i < expenditures.length; i++)
 {
 	var poor = expenditures[i];
 	if (poor.amount < lowest.amount)
 	{
-		poor = lowest;
+		lowest = poor;
 	}
 } 
-not sure about this
-*/
+
 
 var sum = 0;
 for (var i = 0; i < expenditures.length; i++)
@@ -52,10 +53,21 @@ for (var i = 0; i < expenditures.length; i++)
 
 var average = sum/expenditures.length; //not sure about these calculations
 
+
+
 console.log("Highest expenditure: " + highest.country, highest.amount);
-// console.log("Lowest expenditure: " + lowest.country, lowest.amount);
+console.log("Lowest expenditure: " + lowest.country, lowest.amount);
 console.log("Average expenditure: " + average); 
 
+/* var moreThanFive = {amount : 5}
+for (var i = 0; i < expenditures.length; i++)
+{
+	if (expenditures[i].amount > moreThanFive)
+	{
+		console.log(moreThanFive.country);
+	}
+} 
+ Eh, gave it the community-college try. */ 
 
 </script>
 </body>
