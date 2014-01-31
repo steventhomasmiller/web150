@@ -65,27 +65,41 @@
   var classes = $(".web150");
   
   //3. Find the tag with an id of special, and store below
-  var special;
+  var special = $("#special");
   
   //4. Find all tags with a class of external, inside of a tag with the ID "article"
-  var children;
+  var children = $("#article .external");
   
   //5. Find the nearest ancestor <div> to the <aside> tag.
-  var closest;
+  var closest = $("div#article, .aside"); //Happy accident here; not sure how I solved it.
   
   //6. Find the first <ul> and change its text color to "green" (use css function)
+  
+  var firstUL = $("ul:first");
+  firstUL.css("color","green");
   
   
   //7. Find all odd-numbered span tags and hide them
   
+  var oddSpans = $("span");
+  oddSpans.hide();
+  
   
   //8. Find the span with a class of animal, and change its text to read "vegetable"
   
+  var animalSpan = $("span.animal");
+  animalSpan.html("vegetable");
   
   //9. Find all tags with a class of "internal" and remove that class
   
+  /* var removeInternal = $("ul.internal");
+  removeClass("ul.internal"); */
+  
+  $("ul .internal").removeClass();
   
   //10. Find all ordered lists on the page, and add the class "finished"
+  
+  
   
   //http://thomaswilburn.github.io/textbook/build/jquery.html
   
