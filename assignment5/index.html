@@ -1,4 +1,80 @@
-web150
-======
+<!doctype html>
+<html>
+        <head>
+                <title>Obscure Indie Albums - A Gallery Of</title>
+                <meta charset="utf8">
+				
+				<style>
+				
+				.pictures li {
+						display: inline-block;
+						border: 1px solid black;
+						border-radius: 4px 4px 0 0;
+						padding: 4px 12px;
+						background: #DDD;
+						}
+						
+				.picture li.active {
+						background: white;
+						border-bottom: 1px solid red;
+						}
+						
+				.picture { height:600px; background:gray; font-size:30px; font-family:Garamond; }
+				
+				
+				.picture img { left:46px; margin-top: 20px; position:absolute; }
+				
+				h1 { font-family: Helvetica;  color: #707070; text-shadow: 5px 4px 0 #eee,7px 6px 0 #707070; }
+					
+				</style>
+					
+        </head>
+<body>
 
-Winter Web 150 Repository
+<h1>Obscure Indie Albums - A Gallery Of</h1>
+
+	<ul class="pictures">
+		<li><a href="#first">First</a>
+		<li><a href="#second">Second</a>
+		<li><a href="#third">Third</a>
+	</ul>
+	
+	<div class="picture" id="first">
+		<img src="http://i.imgur.com/16uUY.png">
+	</div>
+	
+	<div class="picture" id="second">
+		<img src="http://i.imgur.com/aF3eq.jpg">
+	</div>
+	
+	<div class="picture" id="third">
+		<img src="http://i.imgur.com/cw8hL.png">
+	</div>
+	
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"/></script>
+<script>
+
+var picLinks = $(".pictures a");
+picLinks.on("click", function(e) {
+	$(".picture:visible").hide();
+	var $this = $(this);
+	var href = $this.attr("href");
+	var picture = $(href);
+	picture.fadeIn();
+	e.preventDefault();
+	$(".active").removeClass("active");
+	var li = $this.closest("li");
+	li.addClass("active");
+});
+
+var firstPic = picLinks.filter(":first");
+firstPic.click();
+
+//Just trying this out
+
+
+
+
+</script>
+</body>
+</html>
