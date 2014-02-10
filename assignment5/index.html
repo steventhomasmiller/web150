@@ -19,12 +19,22 @@
 						border-bottom: 1px solid red;
 						}
 						
-				.picture { height:600px; background:gray; font-size:30px; font-family:Garamond; }
+				//.picture { height:550px; background:gray; font-size:30px; font-family:Garamond; }
 				
 				
-				.picture img { left:46px; margin-top: 20px; position:absolute; }
+				.picture img { left:46px; margin-top: 20px; position:absolute; border:3px solid; }
+				
+				//.picture img :first { background:#F0F2BB; }
+				
+				div#first.picture { background:#F0F2BB; height:500px; }
+				
+				div#second.picture { background:#6E9091; height:600px; }
+				
+				div#third.picture { background:#F7204B; height:400px; }
 				
 				h1 { font-family: Helvetica;  color: #707070; text-shadow: 5px 4px 0 #eee,7px 6px 0 #707070; }
+				
+				p {font-style:italic;}
 					
 				</style>
 					
@@ -49,7 +59,10 @@
 	
 	<div class="picture" id="third">
 		<img src="http://i.imgur.com/cw8hL.png">
+		
 	</div>
+	
+	<p>To create your own indie album, visit <a href="http://www.reddit.com/r/pics/comments/cep2x/">this Reddit thread</a>.</p>
 	
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"/></script>
 <script>
@@ -72,7 +85,7 @@ firstPic.click();
 
 //Just trying this out
 
-
+$(elementID).paginate()
 
 
 </script>
