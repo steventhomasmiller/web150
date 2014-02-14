@@ -59,11 +59,11 @@ assert( isNaN( adder("abc", 4) ) && typeof adder("abc", 4) == "number", "Bad inp
 //4. Using the concept of function scope, change the variable `greeting` to
 //read "Hello, world!" just by editing the function `sayHello`.
 
-var greeting = "Hello, world!!!"; 
+var greeting; 
 
-var sayHello = function(name) {
-	var message = greeting.replace("world", name);
-	return message;
+var sayHello = function(welcome) {
+	greeting = welcome;
+	return welcome;
 };
 
 sayHello();
