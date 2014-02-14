@@ -71,8 +71,15 @@ assert( greeting == "Hello, world!", "sayHello() should alter greeting");
 
 //5. Remember our loops? They're back: update `findTotal` so that it totals up
 //all the numbers in an array that's passed in. //add things in a loop
-var samples = [1, 2, 3, 4, 5];
-var findTotal = function() {};
+var samples = [5, 5, 5, 5, 5];
+var findTotal = function(arr) {
+	var sum = 0;
+	for (var i = 0; i < arr.length; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
+};
 
 assert( findTotal(samples) == 15, "Function found the correct total");
 
