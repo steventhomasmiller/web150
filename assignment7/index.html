@@ -23,7 +23,7 @@
 	<button class="color" data-color="red">Blood</button>
 	<button class="color" data-color="blue">Water</button> 
 	
-	<button class="erase" data-erase="erase">Eraser</button>
+	<button class="erase" data-erase="eraser">Eraser</button>
 	
 	<button class="clear" data-erase="clear">Clear</button>
 	
@@ -44,7 +44,7 @@
 		active: false, 
 		shape: "square",
 		size: 20,
-		color: "red"
+		color: "red",
 	};
 	
 	var drawRect = function (x, y, size) {
@@ -57,12 +57,12 @@
 		context.fill();
 	};
 	
-	var eraser = function(x, y, size) {
+	var eraserTool = function(x, y, size) {
 		context.clearRect(0, 0, size);
 	};
 
-	var clear = function(x,y, size) { 
-	context.clearRect(0, 0, canvas.width, canvas.height);
+	var clearPage = function(x,y, size) { 
+		context.clearRectcontext.clearRect(0, 0, canvas.width, canvas.height);
 	};
 	
 	
@@ -80,7 +80,11 @@
 				drawCircle(x, y, brush.size);
 			} else if (brush.shape == "square") {
 				drawRect(x, y, brush.size);
-			}   
+			} else if (brush.eraser == "eraser") {
+				eraserTool(x, y, brush.size); 
+			} else if (brush.clear = "clear") {
+				clearPage(0, 0, canvas.width, canvas.height);
+			}
 		}
 	});                      
 	                         
@@ -109,10 +113,10 @@
 		brush.color = color;
 	});
 	
-	var eraser = $(".eraser");
-	eraser.on ("click", function() {
+	var erase = $(".eraser");
+	erase.on ("click", function() {
 		var $this = $(this);
-		var eraser = $this.attr("data-eraser");
+		var erase = $this.attr("data-eraser");
 		brush.eraser = eraser; 
 	 
 	});
