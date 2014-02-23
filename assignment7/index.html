@@ -3,70 +3,73 @@
         <head>
                 <title>The Paint Shop</title>
                 <meta charset="utf8">
-				
+
 				<style>
 					canvas { display: block; }
 				</style>
-				
-					
+
+
         </head>
 <body>
 
 	<h1>The Paint Shop of the Future (copyright 1980)</h1>
-	
+
 	<button class="shape" data-shape="square">[]</button>
 	<button class="shape" data-shape="circle">O</button>
-	
+
 	<button class="size" data-size="10">Tiny</button>
 	<button class="size" data-size="30">Huge</button>
-	
+
 	<button class="color" data-color="red">Blood</button>
 	<button class="color" data-color="blue">Water</button> 
-	
+
 	<button class="erase" data-erase="eraser">Eraser</button>
-	
+
 	<button class="clear" data-erase="clear">Clear</button>
-	
-	
-	
+
+
+
 	<canvas id="canvas" width=800 height=600></canvas>
-	
+
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"/></script>
-	
+
 	<script>
-	
+
 	var canvas = document.getElementById("canvas");
 	var context = canvas.getContext("2d");
-	
+
 	var $canvas = $(canvas);
-	
+
 	var brush = {
 		active: false, 
 		shape: "square",
 		size: 20,
 		color: "red",
+		eraser: true
 	};
-	
+
 	var drawRect = function (x, y, size) {
 	     context.fillRect(x - size / 2, y - size / 2, size, size);                    
 	};                       
-	                         
+
 	var drawCircle = function(x, y, size) {
 		context.beginPath();
 		context.arc(x, y, size / 2, 0, 2 * Math.PI);
 		context.fill();
 	};
-	
+
 	var eraserTool = function(x, y, size) {
-		context.clearRect(0, 0, size);
+		context.strokeStyle = "rgb(255, 255, 255)";
+		context.globalCompositeOperation = "copy";  
+		context.strokeStyle = ("rgba(255,255,255,255)");
 	};
 
-	var clearPage = function(x,y, size) { 
+	var clearPage = function() { 
 		context.clearRectcontext.clearRect(0, 0, canvas.width, canvas.height);
 	};
-	
-	
-	                         
+
+
+
 	//basic interaction      
 	$canvas.on("mousemove", function(e) {
 	//adjust for canvas position on page
@@ -82,12 +85,10 @@
 				drawRect(x, y, brush.size);
 			} else if (brush.eraser == "eraser") {
 				eraserTool(x, y, brush.size); 
-			} else if (brush.clear = "clear") {
-				clearPage(0, 0, canvas.width, canvas.height);
 			}
 		}
 	});                      
-	                         
+
 	$canvas.on("mousedown mouseup", function(e) {
 		brush.active = e.type == "mousedown";
 	});
@@ -98,42 +99,40 @@
 		var shape = $this.attr("data-shape");
 		brush.shape = shape;
 	});
-	
+
 	var sizes = $(".size");
 	sizes.on("click", function() {
 		var $this = $(this);
 		var size = $this.attr("data-size");
 		brush.size = size;
 	});
-	
+
 	var colors = $(".color");
 	colors.on("click", function() {
 		var $this = $(this);
 		var color = $this.attr("data-color");
 		brush.color = color;
 	});
-	
+
 	var erase = $(".eraser");
 	erase.on ("click", function() {
 		var $this = $(this);
 		var erase = $this.attr("data-eraser");
 		brush.eraser = eraser; 
-	 
+
 	});
-	
+
 	var clear = $(".clear");
 	clear.on ("click", function() {
 		var $this = $(this);
 		var clear = $this.attr("data-clear");
 		brush.clear = clear; 
-	 
+
 	});
-	
-	
-	
-	
+
+
+
+
 	</script>
 </body>                      
 </html>     
-	
-	
