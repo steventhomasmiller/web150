@@ -3,10 +3,12 @@
 <body>
 
 <head>
-                <title>The Magic Eight Ball</title>
+                <title>The Magic Eightfg Ball</title>
                 <meta charset="utf8">
 
         </head>
+        
+        <h1>The Magic 8 Ball</h1>
         
         <button id="reveal">Reveal thy answer</button>
         
@@ -17,19 +19,36 @@
 
 //$('form button, form input[type=submit]').on('click', function(e) {
 
+var getFortune = function(data) {
+	var request = $.ajax({
+		url: "http://thomaswilburn.net:8080/magic8",
+		dataType: "jsonp",
+		jsonpCallback: "answer"
+	
+	});
+	request.done(function(data) {
+		var body = $("body");
+		body.append(answer);
+	
+	//console.log(answer);
+
+	});
+};
+
+
 var request = $.ajax({
 	url: "http://thomaswilburn.net:8080/magic8",
-});
+	dataType: "jsonp",
+	jsonpCallback: "answer"
+}); 
 
-request.done(function(answer) {
 
-	console.log(answer);
-
-});
 
 var reveal = $("#reveal");
-reveal.on("click" function() {
-	//not sure about this 
+reveal.on("click", function() {
+	var fortune = $("answer").val();
+	getFortune(fortune);
+	console.log(fortune);
 
 });
 
