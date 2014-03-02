@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<body>
+
+<head>
+                <title>The Magic Eight Ball</title>
+                <meta charset="utf8">
+
+        </head>
+        
+        <button id="reveal">Reveal thy answer</button>
+        
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"/></script>
+
+<script>
+
+
+//$('form button, form input[type=submit]').on('click', function(e) {
+
+var request = $.ajax({
+	url: "http://thomaswilburn.net:8080/magic8",
+});
+
+request.done(function(answer) {
+
+	console.log(answer);
+
+});
+
+var reveal = $("#reveal");
+reveal.on("click" function() {
+	//not sure about this 
+
+});
+
+
+
+</script>
+</body>
+</html>
