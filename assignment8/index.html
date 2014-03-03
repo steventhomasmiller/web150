@@ -5,6 +5,10 @@
 <head>
                 <title>The Magic Eightfg Ball</title>
                 <meta charset="utf8">
+                
+                <style>
+                
+                </style>
 
         </head>
         
@@ -19,28 +23,22 @@
 
 //$('form button, form input[type=submit]').on('click', function(e) {
 
-var getFortune = function(data) {
+var getFortune = function() {
 	var request = $.ajax({
 		url: "http://thomaswilburn.net:8080/magic8",
 		dataType: "jsonp",
-		jsonpCallback: "answer"
+		//jsonpCallback: "answer"
 	
 	});
 	request.done(function(data) {
 		var body = $("body");
-		body.append(answer);
-	
+		body.append(data.answer);
+		
 	//console.log(answer);
 
 	});
 };
 
-
-var request = $.ajax({
-	url: "http://thomaswilburn.net:8080/magic8",
-	dataType: "jsonp",
-	jsonpCallback: "answer"
-}); 
 
 
 
@@ -48,7 +46,8 @@ var reveal = $("#reveal");
 reveal.on("click", function() {
 	var fortune = $("answer").val();
 	getFortune(fortune);
-	console.log(fortune);
+	//console.log(fortune);
+	
 
 });
 
