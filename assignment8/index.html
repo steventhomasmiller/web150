@@ -14,7 +14,7 @@
         
         <h1>The Magic 8 Ball</h1>
         
-        <button id="reveal">Reveal thy answer</button>
+        <button id="reveal">Reval thy answer</button>
         
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"/></script>
 
@@ -27,12 +27,19 @@ var getFortune = function() {
 	var request = $.ajax({
 		url: "http://thomaswilburn.net:8080/magic8",
 		dataType: "jsonp",
-		//jsonpCallback: "answer"
+		
 	
 	});
 	request.done(function(data) {
+				
 		var body = $("body");
-		body.append(data.answer);
+		var answer = body.append(data.answer);
+		//body.append(data.answer);
+		answer.fadeOut();
+		//I can't seem to select just the answer
+		
+		
+		
 		
 	//console.log(answer);
 
@@ -44,10 +51,13 @@ var getFortune = function() {
 
 var reveal = $("#reveal");
 reveal.on("click", function() {
+	//var $this = $(this);
 	var fortune = $("answer").val();
 	getFortune(fortune);
-	//console.log(fortune);
+	fortune.
 	
+	
+
 
 });
 
