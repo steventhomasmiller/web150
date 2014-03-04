@@ -3,7 +3,7 @@
 <body>
 
 <head>
-                <title>The Magic Eightfg Ball</title>
+                <title>The Magic Eight Ball</title>
                 <meta charset="utf8">
                 
                 <style>
@@ -33,10 +33,12 @@ var getFortune = function() {
 	request.done(function(data) {
 				
 		var body = $("body");
-		var answer = body.append(data.answer);
 		//body.append(data.answer);
-		answer.fadeOut();
-		//I can't seem to select just the answer
+		var answerElement = $("<div class=answer></div>");
+		answerElement.html(data.answer);
+		body.append(answerElement);
+		answerElement.hide().fadeIn(3000).fadeOut(6000);
+		
 		
 		
 		
@@ -54,7 +56,7 @@ reveal.on("click", function() {
 	//var $this = $(this);
 	var fortune = $("answer").val();
 	getFortune(fortune);
-	fortune.
+	
 	
 	
 
