@@ -80,7 +80,7 @@
       } else if ($this.is(".previous")){
         slide = current.prev();
       } else {
-		slideBlank.clear();
+		slide = slideBlank.html("");
 	  } //hmmmm
       $(".slides section").hide();
       slide.fadeIn();
