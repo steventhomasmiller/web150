@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Broken Windows</title>
+  <title>Working Windows</title>
   <meta charset="utf8">
   <style> 
 * {
@@ -74,13 +74,11 @@
       var $this = $(this);
       var current = $(".slides section:visible");
       var slide;
-	  var blankSlide = $(".slide-controls a");
+	  //var blankSlide = $(".slide-controls a"); not needed for assignment
       if ($this.is(".next")) {
         slide = current.next();
-      } else if ($this.is(".previous")){
-        slide = current.prev();
       } else {
-		slide = slideBlank.html("");
+		slide = current.prev();
 	  } //hmmmm
       $(".slides section").hide();
       slide.fadeIn();
