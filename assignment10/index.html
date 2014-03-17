@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>Countenance Catalogue: The First Social Network Site of Its Kind</title>
+	<link href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script>
+		//make jquery page load function
+		$(document).ready(function(){
+			$("#interesting-stuff").accordion({
+					collapsible : true,
+					active : false,	});
+			$("#tabular").tabs({
+					event: "mouseover",	
+					collapsible: true });
+			$("#Title").draggable();
+			
+			$( "#dialog" ).dialog({
+					  autoOpen: false,
+					  show: {
+						effect: "blind",
+						duration: 1000
+					  },
+					  hide: {
+						effect: "explode",
+						duration: 1000
+					  }
+					});
+ 
+			$( "#opener" ).click(function() {
+			  $( "#dialog" ).dialog( "open" );
+			});
+			
+		var availableTags = [
+			  "The deviousness of dual-sidedness is almost poetic in its bureaucracy.",
+			  "My opponent is conspiring with drug dealers, racists and unstable nuclear regimes.",
+			  "Smithovich needs to work the defensive advantage, get the football to his runner and fake out to the blitz play.",
+			  "Here's Crabland - 4 foot 3 - pinned at the 26 and 7:40 remaining - I think he'll play the tackling opportunity and fork to the pistol formation, John.",
+			  "A wise trader these days will always restructure lump-sum currencies.",
+			  "Sharon is dedicated to helping leverage worldwide ePortals for today's web economy virtual eMonopolies.",
+			  "You know, just constantly strive to provide highly effective eTraining portals for today's Fortune 500 market leaders.",
+			  "Enjoying myself a good Champs de Robespierre, which brings together creamy coffee elements and a intoxicating crack-cocaine flavor in their 1994 Zinfandel.",
+			  "Hanging out with the buds, enjoying Reflex Impact!",
+			  "In the European exchange, never insure senior-rated debts.",
+			  "Wondering:  Why does the sun come out during the day, when it would be so much more useful if it came out at night when it was dark?",
+			
+			];
+			$( "#stance" ).autocomplete({
+			  source: availableTags
+			});
+		
+			$( "input[type=submit], a" )
+			  //.button()
+			  .click(function( event ) {
+				event.preventDefault();
+			  });
+		
+		});
+		
+		//http://jqueryui.com/demos/
+	</script>
+	
+</head>
+<body>
+	<div id="Title">
+		<h2>Countenance Catalogue: The First Social Network Site of Its Kind</h2>
+		<p>(Click and drag title, just because.)</p>
+	</div>
+	
+	<div id="interesting-stuff">
+		<h3>Your Own Information</h3>
+		<div>
+			<p>This is the first section.</p>
+		</div>
+		
+		<h3>Your Own Interests</h3>
+		<div>
+			<p>This is the second section.</p>
+		</div>
+		
+		<h3>Face Photographs</h3>
+		<div>
+			<p>This is the third section.</p>
+		</div>
+	</div>
+	
+	<div id="Circumstance">
+		<h3>For everyone's benefit, please expound upon your current circumstance</h3>
+			<div class="ui-widget">
+			  <label for="stance">Circumstance: </label>
+			  <input id="stance">
+			</div>
+		<input type="submit" value="Disseminate circumstance!!">
+	</div>
+	
+	<div id="tabular">
+	<h3>Your Chums</h3>
+		<ul>
+			<li><a href="#first">Chum One</a></li>
+			<li><a href="#second">Chum Two</a></li>
+			<li><a href="#third">Chum Three</a></li>
+			<li><a href="#fourth">Chum Four</a></li>
+			<li><a href="#fifth">Chum Five</a></li>
+			<li><a href="#sixth">Chum Six</a></li>
+			<li><a href="#seventh">Chum Seven</a></li>
+		</ul>
+		<div id="first">
+			<p>Piotr Miron</p>
+			<div id="dialog" title="Basic dialog">
+			<p>Thank you for cherishing your chum's profile. They will be notified in 8-10 business days of your cherishing activity -- toward them.</p>
+			</div>
+			<button id="opener">Cherish</button>
+		</div>
+		<div id="second">
+			<p>Booooo.</p>
+			
+		</div>
+		<div id="third">
+			<p>Gaaaa</p>
+			
+		</div>
+		<div id="fourth">
+			<p>Fs</p>
+			
+		</div>
+		<div id="fifth">
+			<p>da</p>
+			
+		</div>
+		<div id="sixth">
+			<p>Gaadsdaa</p>
+			
+		</div>
+		<div id="seventh">
+			<p>333</p>
+			
+		</div>
+	</div>
+	
+	
+	
+</body>
+</html>
