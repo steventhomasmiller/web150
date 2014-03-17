@@ -6,61 +6,7 @@
 	<link href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
 	<script src="js/jquery-1.10.2.js"></script>
 	<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
-	<script>
-		//make jquery page load function
-		$(document).ready(function(){
-			$("#interesting-stuff").accordion({
-					collapsible : true,
-					active : false,	});
-			$("#tabular").tabs({
-					event: "mouseover",	
-					collapsible: true });
-			$("#Title").draggable();
-			
-			$( "#dialog" ).dialog({
-					  autoOpen: false,
-					  show: {
-						effect: "blind",
-						duration: 1000
-					  },
-					  hide: {
-						effect: "explode",
-						duration: 1000
-					  }
-					});
- 
-			$( "#opener" ).click(function() {
-			  $( "#dialog" ).dialog( "open" );
-			});
-			
-		var availableTags = [
-			  "The deviousness of dual-sidedness is almost poetic in its bureaucracy.",
-			  "My opponent is conspiring with drug dealers, racists and unstable nuclear regimes.",
-			  "Smithovich needs to work the defensive advantage, get the football to his runner and fake out to the blitz play.",
-			  "Here's Crabland - 4 foot 3 - pinned at the 26 and 7:40 remaining - I think he'll play the tackling opportunity and fork to the pistol formation, John.",
-			  "A wise trader these days will always restructure lump-sum currencies.",
-			  "Sharon is dedicated to helping leverage worldwide ePortals for today's web economy virtual eMonopolies.",
-			  "You know, just constantly strive to provide highly effective eTraining portals for today's Fortune 500 market leaders.",
-			  "Enjoying myself a good Champs de Robespierre, which brings together creamy coffee elements and a intoxicating crack-cocaine flavor in their 1994 Zinfandel.",
-			  "Hanging out with the buds, enjoying Reflex Impact!",
-			  "In the European exchange, never insure senior-rated debts.",
-			  "Wondering:  Why does the sun come out during the day, when it would be so much more useful if it came out at night when it was dark?",
-			
-			];
-			$( "#stance" ).autocomplete({
-			  source: availableTags
-			});
-		
-			$( "input[type=submit], a" )
-			  //.button()
-			  .click(function( event ) {
-				event.preventDefault();
-			  });
-		
-		});
-		
-		//http://jqueryui.com/demos/
-	</script>
+	
 	
 </head>
 <body>
@@ -109,36 +55,112 @@
 		<div id="first">
 			<p>Piotr Miron</p>
 			<div id="dialog" title="Basic dialog">
-			<p>Thank you for cherishing your chum's profile. They will be notified in 8-10 business days of your cherishing activity -- toward them.</p>
+			
 			</div>
-			<button id="opener">Cherish</button>
+			<button class="open-cherish">Cherish</button>
 		</div>
 		<div id="second">
 			<p>Booooo.</p>
+			<button class="open-cherish">Cherish</button>
 			
 		</div>
 		<div id="third">
 			<p>Gaaaa</p>
+			<button class="open-cherish">Cherish</button>
 			
 		</div>
 		<div id="fourth">
 			<p>Fs</p>
+			<button class="open-cherish">Cherish</button>
 			
 		</div>
 		<div id="fifth">
 			<p>da</p>
+			<button class="open-cherish">Cherish</button>
 			
 		</div>
 		<div id="sixth">
 			<p>Gaadsdaa</p>
+			<button class="open-cherish">Cherish</button>
 			
 		</div>
 		<div id="seventh">
 			<p>333</p>
+			<button class="open-cherish">Cherish</button>
 			
 		</div>
 	</div>
 	
+	<script>
+		//make jquery page load function
+		
+			$("#interesting-stuff").accordion({
+					collapsible : true,
+					active : false,	});
+			$("#tabular").tabs({
+					event: "mouseover",	
+					collapsible: true });
+			$("#Title").draggable();
+			
+			/* $( "#dialog" ).dialog({
+					  autoOpen: false,
+					  show: {
+						effect: "blind",
+						duration: 1000
+					  },
+					  hide: {
+						effect: "explode",
+						duration: 1000
+					  }
+					}); */
+ 
+			var cherishDialog = $("#dialog").dialog({  
+				autoOpen: false,
+					  show: {
+						effect: "blind",
+						duration: 1000
+					  },
+					  hide: {
+						effect: "explode",
+						duration: 1000
+					  }
+					  
+				
+			});
+			var cherishDialogueText = $("#dialog").html("Thank you for cherishing your chum's profile. They will be notified in 8-10 business days of your cherishing activity -- toward them");
+			
+			$(".open-cherish").on("click", function() { cherishDialog.dialog("open") });
+			
+			
+			
+		var availableTags = [
+			  "The deviousness of dual-sidedness is almost poetic in its bureaucracy.",
+			  "My opponent is conspiring with drug dealers, racists and unstable nuclear regimes.",
+			  "Smithovich needs to work the defensive advantage, get the football to his runner and fake out to the blitz play.",
+			  "Here's Crabland - 4 foot 3 - pinned at the 26 and 7:40 remaining - I think he'll play the tackling opportunity and fork to the pistol formation, John.",
+			  "A wise trader these days will always restructure lump-sum currencies.",
+			  "Sharon is dedicated to helping leverage worldwide ePortals for today's web economy virtual eMonopolies.",
+			  "You know, just constantly strive to provide highly effective eTraining portals for today's Fortune 500 market leaders.",
+			  "Enjoying myself a good Champs de Robespierre, which brings together creamy coffee elements and a intoxicating crack-cocaine flavor in their 1994 Zinfandel.",
+			  "Hanging out with the buds, enjoying Reflex Impact!",
+			  "In the European exchange, never insure senior-rated debts.",
+			  "Wondering:  Why does the sun come out during the day, when it would be so much more useful if it came out at night when it was dark?",
+			
+			];
+			$( "#stance" ).autocomplete({
+			  source: availableTags
+			});
+		
+			$( "input[type=submit], a" )
+			  //.button()
+			  .click(function( event ) {
+				event.preventDefault();
+			  });
+		
+		
+		
+		//http://jqueryui.com/demos/
+	</script>
 	
 	
 </body>
