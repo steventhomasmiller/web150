@@ -94,7 +94,13 @@ var sample = true;
 // twelve, `isPM` should be true. Otherwise, it should be false.
 
 var hours = new Date().getHours();
-var isPM;
+
+if (hours > 12)
+	{
+		var isPM = true;
+	}
+
+
 
 
 // 1b. The variable named `pets` contains the number of pets in each apartment of
@@ -102,49 +108,73 @@ var isPM;
 // list together and answer the question, storing the result in `petTotal`.
 
 var pets = [2, 1, 2, 0, 0, 2];
-var petTotal;
+var sum = 0; 
+for (var i = 0; i < pets.length; i++)
+{
+	sum = sum + pets[i];
+}
+
+var petTotal = sum;
 
 
 // 1c. Working with pets again, write another loop that will count the number of
 // apartments without any pets, then store that value in `petless`.
 
-var petless;
+var petless = 0;
 
+for (var i = 0; i < pets.length; i++)
+{
+	var pet = pets[i];
+	if (pet == 0) 
+	{
+		petless++;   //hmm
+	}
+}
+//count apart
 
 //2. SELECTORS
 
 // 2a. Find all the tags on the page with a class of "video", and store them
 // in the variable below named `youtube`
-var youtube;
+var youtube = $(".video");
 
 
 // 2b. Find the tag with an id of "good-parts" and store it in the variable
 // below named `crockford`
-var crockford;
+var crockford = $("#good-parts");
 
 
 // 2c. Find all the <span> tags in the document and store them in the variable 
 // below named `spans`
-var spans;
+var spans = $("span");
 
 
 // 2d. Find all the <li> tags inside of the element with a class of "article"
 // and store them in the variable below named `list`
-var list;
+var list = $(".article li");
 
 
 //3. DOM MANIPULATION
 
 // 3a. Find the element with a class of "redundant" and change its text to "web"
 
+var redundant = $(".redundant");
+redundant.html("web");
 
 // 3b. Find all links on the page and change their color style to "blue"
 
+var links = $("a");
+links.css("color", "blue");
 
 // 3c. Find all elements with a class of "book" and add the class "highlight"
 
+var book = $(".book");
+book.addClass("highlight");
 
 // 3d. Hide all elements with the class of "self-promotion"
+
+var selfPromotion = $(".self-promotion");
+selfPromotion.hide();
 
 
 //4. EVENTS
@@ -153,8 +183,16 @@ var list;
 // on the element, it should change its contents to read (without the slashes): 
 // THIS SPACE INTENTIONALLY LEFT BLANK.
 
+var header = $("h1");
+header.on('click', function(e){
+	var $this = $(this);
+	$this.html("THIS SPACE INTENTIONALLY LEFT BLANK.");
+});
+
 // The test script built into this exam will automatically click on it--you should
 // see it change immediately if you've set up your click correctly
+
+
 
 
 
@@ -170,7 +208,26 @@ var list;
 // call `rps` with various values, and make sure that they return the expected
 // result. 
 
-var rps = function() {};
+var rps = function(shoot1, shoot2) {
+
+	if (shoot1 == "paper" && shoot2 == "scissors")
+	{
+		return 2;
+	} else if (shoot1 == "paper" && shoot2 == "rock"){
+		return 1;
+	} else if (shoot1 == "scissors" && shoot2 == "paper"){
+		return 1;
+	} else if (shoot1 == "scissors" && shoot2 =="rock"){
+		return 2;
+	} else if (shoot1 == "rock" && shoot2 == "scissors"){
+		return 1;
+	} else if (shoot1 =="rock" && shoot2 == "paper"){
+		return 2;
+	} else {
+		return 0;
+	}
+
+};
 
 
   </script>
