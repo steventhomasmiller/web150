@@ -6,9 +6,6 @@
                 <title>The Magic Eight Ball</title>
                 <meta charset="utf8">
                 
-                <style>
-                
-                </style>
 
         </head>
         
@@ -19,7 +16,6 @@
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"/></script>
 
 <script>
-
 
 //$('form button, form input[type=submit]').on('click', function(e) {
 
@@ -38,18 +34,11 @@ var getFortune = function() {
 		answerElement.html(data.answer);
 		body.append(answerElement);
 		answerElement.hide().fadeIn(3000).fadeOut(6000);//seems to emulate eight-ball behavior of disappearing answer.
-		
-		
-		
-		
-		
+	
 	//console.log(answer);
 
 	});
 };
-
-
-
 
 var reveal = $("#reveal");
 reveal.on("click", function() {
@@ -57,9 +46,6 @@ reveal.on("click", function() {
 	var fortune = $("answer").val();
 	getFortune(fortune);
 	
-	
-	
-
 
 });
 
