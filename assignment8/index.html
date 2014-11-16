@@ -17,8 +17,6 @@
 
 <script>
 
-//$('form button, form input[type=submit]').on('click', function(e) {
-
 var getFortune = function() {
 	var request = $.ajax({
 		url: "http://thomaswilburn.net:8080/magic8",
@@ -33,9 +31,7 @@ var getFortune = function() {
 		var answerElement = $("<div class=answer></div>");
 		answerElement.html(data.answer);
 		body.append(answerElement);
-		answerElement.hide().fadeIn(3000).fadeOut(6000);//seems to emulate eight-ball behavior of disappearing answer.
-	
-	//console.log(answer);
+		answerElement.hide().fadeIn(3000).fadeOut(6000);
 
 	});
 };
@@ -48,7 +44,6 @@ reveal.on("click", function() {
 	
 
 });
-
 
 
 </script>
